@@ -14,6 +14,7 @@ import CodeSnippet from './components/code-snippet';
 import Install from './components/install';
 import Features from './components/features';
 
+
 // freeze date to April 1st
 timekeeper.freeze(new Date('2015-04-01'));
 
@@ -90,6 +91,7 @@ const DatePickerSingle = React.createClass({
 
 
 var mainCodeSnippet = fs.readFileSync(__dirname + '/code-snippets/main.jsx', 'utf8');
+var i18nCodeSnippet = fs.readFileSync(__dirname + '/code-snippets/i18n.jsx', 'utf8');
 
 
 const Index = React.createClass({
@@ -105,6 +107,9 @@ const Index = React.createClass({
   },
 
   _selectLocale() {
+    require(`moment/locale/${this.refs.locale.value}`);
+    moment.locale(this.refs.locale.value);
+
     this.setState({
       locale: this.refs.locale.value,
     });
@@ -212,6 +217,7 @@ const Index = React.createClass({
                   <option value="it">IT</option>
                   <option value="es">ES</option>
                   <option value="de">DE</option>
+                  <option value="ru">RU</option>
                 </select>
               </h4>
               <DatePickerRange
@@ -219,6 +225,9 @@ const Index = React.createClass({
                 numberOfCalendars={2}
                 selectionType="range"
                 minimumDate={new Date()} />
+              <CodeSnippet language="javascript">
+                {processCodeSnippet(i18nCodeSnippet)}
+              </CodeSnippet>
             </div>
 
           </div>
