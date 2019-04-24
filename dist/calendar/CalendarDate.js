@@ -126,10 +126,10 @@ var CalendarDate = _react2.default.createClass({
     this.props.onUnHighlightDate(this.props.date);
   },
   getBemModifiers: function getBemModifiers() {
-    var _props = this.props;
-    var date = _props.date;
-    var firstOfMonth = _props.firstOfMonth;
-    var today = _props.isToday;
+    var _props = this.props,
+        date = _props.date,
+        firstOfMonth = _props.firstOfMonth,
+        today = _props.isToday;
 
 
     var otherMonth = false;
@@ -146,12 +146,12 @@ var CalendarDate = _react2.default.createClass({
     return { today: today, weekend: weekend, otherMonth: otherMonth };
   },
   getBemStates: function getBemStates() {
-    var _props2 = this.props;
-    var isSelectedDate = _props2.isSelectedDate;
-    var isInSelectedRange = _props2.isInSelectedRange;
-    var isInHighlightedRange = _props2.isInHighlightedRange;
-    var highlighted = _props2.isHighlightedDate;
-    var disabled = _props2.isDisabled;
+    var _props2 = this.props,
+        isSelectedDate = _props2.isSelectedDate,
+        isInSelectedRange = _props2.isInSelectedRange,
+        isInHighlightedRange = _props2.isInHighlightedRange,
+        highlighted = _props2.isHighlightedDate,
+        disabled = _props2.isDisabled;
 
 
     var selected = isSelectedDate || isInSelectedRange || isInHighlightedRange;
@@ -159,17 +159,17 @@ var CalendarDate = _react2.default.createClass({
     return { disabled: disabled, highlighted: highlighted, selected: selected };
   },
   render: function render() {
-    var _props3 = this.props;
-    var date = _props3.date;
-    var dateRangesForDate = _props3.dateRangesForDate;
-    var isSelectedDate = _props3.isSelectedDate;
-    var isSelectedRangeStart = _props3.isSelectedRangeStart;
-    var isSelectedRangeEnd = _props3.isSelectedRangeEnd;
-    var isInSelectedRange = _props3.isInSelectedRange;
-    var isHighlightedDate = _props3.isHighlightedDate;
-    var isHighlightedRangeStart = _props3.isHighlightedRangeStart;
-    var isHighlightedRangeEnd = _props3.isHighlightedRangeEnd;
-    var isInHighlightedRange = _props3.isInHighlightedRange;
+    var _props3 = this.props,
+        date = _props3.date,
+        dateRangesForDate = _props3.dateRangesForDate,
+        isSelectedDate = _props3.isSelectedDate,
+        isSelectedRangeStart = _props3.isSelectedRangeStart,
+        isSelectedRangeEnd = _props3.isSelectedRangeEnd,
+        isInSelectedRange = _props3.isInSelectedRange,
+        isHighlightedDate = _props3.isHighlightedDate,
+        isHighlightedRangeStart = _props3.isHighlightedRangeStart,
+        isHighlightedRangeEnd = _props3.isHighlightedRangeEnd,
+        isInHighlightedRange = _props3.isInHighlightedRange;
 
 
     var bemModifiers = this.getBemModifiers();
